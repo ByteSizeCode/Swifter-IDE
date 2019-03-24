@@ -1,0 +1,3 @@
+cd ~/Downloads
+mv main.swift ~/Library/Developer/Xcode/DerivedData/[INSERT PROPER DIRECTORY HERE]/Build/Products/Debug
+cd ~/Library/Developer/Xcode/DerivedData/[INSERT PROPER DIRECTORY HERE]/Build/Products/Debug

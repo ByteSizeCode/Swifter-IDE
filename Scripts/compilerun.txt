@@ -1,0 +1,2 @@
+swiftc main.swift
+./main
