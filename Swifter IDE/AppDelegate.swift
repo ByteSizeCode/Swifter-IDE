@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  2 IDE Swift FIle Editor
+//  Swifter IDE
 //
-//  Created by DebuggingVM on 11/19/18.
+//  Created by Isaac Raval on 11/19/18.
 //  Copyright © 2018 Isaac Raval. All rights reserved.
 //
 
