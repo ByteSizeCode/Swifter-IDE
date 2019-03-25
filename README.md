@@ -2,6 +2,8 @@
 
 A simple light-weight Swift IDE with limited support for syntax highlighting.
 
+<img src="/ScreenShot/ScreenShot.png" alt="drawing" width="400" height="400"/>
+
 ## Instructions:
 These only need to be done the first time.
 
