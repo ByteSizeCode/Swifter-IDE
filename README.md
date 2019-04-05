@@ -1,6 +1,6 @@
 # Swifter IDE
 
-A simple light-weight Swift IDE with limited support for syntax highlighting.
+A simple light-weight Swift IDE for macOS with limited support for syntax highlighting.
 
 <img src="/ScreenShot/ScreenShot.png" alt="drawing" width="400" height="400"/>
 
