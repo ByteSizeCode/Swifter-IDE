@@ -9,26 +9,22 @@
 import Cocoa
 import Foundation
 
+class ViewController: NSViewController, NSTextViewDelegate {
 
-class ViewController: NSViewController {
-
-   
     @IBOutlet weak var codeEntryField: NSScrollView!
-    
     @IBOutlet var outputDisplay: NSTextView!
+    
+    //Syntax highliting initialize object and set font/size
+    private lazy var syntaxHighlighter = makeSyntaxHighlighter()
+    private let font = NSFont(name: "Georgia", size: 12)!
     
     
     @IBAction func submitCodeToFileButton(_ sender: NSButton) {
-        
         //Save main.swift
         fileWrite()
         
         //Compile and ruin main.swift
         shellCommandCallTest()
-        
-        //Highlight keywords in IDE
-        var syntaxHighlightFeature_phrasesToHighlight: [String] = ["import", "print", "let", "var", "guard", "if", "else", "print"] //Array of keywords
-        colorText(whatToHighlightArguement_arrayOfKeywords: syntaxHighlightFeature_phrasesToHighlight) //Pass them into highlighting function
     }
     
     @IBOutlet var textEntry: NSTextView!
@@ -36,7 +32,9 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //disable window resize
+        textEntry.delegate = self
+        
+        //Disable window resize
         self.preferredContentSize = NSMakeSize(self.view.frame.size.width, self.view.frame.size.height);
         
         //Print out projects "current working directory" or the directory the project is in for terminal commands
@@ -78,7 +76,7 @@ class ViewController: NSViewController {
         return paths[0]
     }
     
-    //Shell- bash prepare.txt and bash end.txt
+    //Shell- bash updatemain.txt and bash compilerun.txt
     func shellCommandCallTest() {
         
         // Create a Task instance
@@ -168,43 +166,21 @@ class ViewController: NSViewController {
     }
     
     //Highlight specific phrases in textEntry
-    func colorText(whatToHighlightArguement_arrayOfKeywords: [String]) {
-        
-        //String from which to color
-        let string = textEntry.string //Get contents of textEntry
-        let attributedString = NSMutableAttributedString(string: string)
-        
-        let color_white = NSColor.white
-        attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: color_white, range: NSRange(location:0, length: string.characters.count))
-        
-        let color_highlighted = NSColor.systemRed
-        attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: color_white, range: NSRange(location:0, length: string.characters.count))
-        
-        //Passed-in array of keywords to highlight
-        let highlightedWords = whatToHighlightArguement_arrayOfKeywords
-        
-        for highlightedWord in highlightedWords {
-            let range = (string as NSString).range(of: highlightedWord)
-            //What color to use
-            attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: color_highlighted, range: range)
-        }
-        
-        //Wipe textEntry completely
-        textEntry.string = ""
-        
-        //Update textEntry with the color changes
-        textEntry.textStorage?.append(attributedString)
+    private func makeSyntaxHighlighter() -> SyntaxHighlighter<AttributedStringOutputFormat> {
+        let theme = Theme.sundellsColors(withFont: Font(font))
+        let format = AttributedStringOutputFormat(theme: theme)
+        let highlighter = SyntaxHighlighter(format: format)
+        return highlighter
     }
     
-    func shell(_ args: String...) -> Int32 {
-        
-        let task = Process()
-        task.launchPath = "/usr/bin/env"
-        task.arguments = args
-        task.launch()
-        task.waitUntilExit()
-        
-        return task.terminationStatus
+    
+    func textDidChange(_ notification: Notification) {
+        guard let textView = notification.object as? NSTextView else { return }
+        print("changed")
+
+        //Highlight entered text using Splash
+        let string = syntaxHighlighter.highlight(textView.string)
+        textEntry.textStorage?.setAttributedString(string)
     }
 }
 
