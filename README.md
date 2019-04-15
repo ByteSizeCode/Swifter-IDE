@@ -2,7 +2,7 @@
 
 A simple light-weight Swift IDE for macOS that uses Splash for syntax highlighting.
 
-<img src="/ScreenShot/ScreenShot.png" alt="drawing" width="400" height="400"/>
+<img src="/ScreenShot/ScreenShot.png" alt="drawing" width="350" height="370"/>
 
 ## Instructions:
 These only need to be done the first time.
