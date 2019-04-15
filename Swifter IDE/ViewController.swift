@@ -18,7 +18,6 @@ class ViewController: NSViewController, NSTextViewDelegate {
     private lazy var syntaxHighlighter = makeSyntaxHighlighter()
     private let font = NSFont(name: "Georgia", size: 12)!
     
-    
     @IBAction func submitCodeToFileButton(_ sender: NSButton) {
         //Save main.swift
         fileWrite()
@@ -83,7 +82,6 @@ class ViewController: NSViewController, NSTextViewDelegate {
         let task = Process()
         let compilemainswift = Process()
         
-        
         // Set the task parameters
         task.launchPath = "/usr/bin/env"
         compilemainswift.launchPath = "/usr/bin/env"
@@ -100,7 +98,6 @@ class ViewController: NSViewController, NSTextViewDelegate {
         // Launch the task
         task.launch()
         compilemainswift.launch()
-        
         
         // Get the data
         let data = pipe.fileHandleForReading.readDataToEndOfFile()
