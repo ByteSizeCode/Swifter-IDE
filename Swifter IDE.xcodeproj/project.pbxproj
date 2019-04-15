@@ -36,6 +36,7 @@
 		6AF2C4EB2263FAA0007AF1E5 /* Tokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF2C4D32263FAA0007AF1E5 /* Tokenizer.swift */; };
 		6AF2C4EC2263FAA0007AF1E5 /* Segment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF2C4D42263FAA0007AF1E5 /* Segment.swift */; };
 		6AF2C4ED2263FAA0007AF1E5 /* TokenType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF2C4D52263FAA0007AF1E5 /* TokenType.swift */; };
+		6AF2C4EF2264591D007AF1E5 /* LISCENCE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6AF2C4EE2264591D007AF1E5 /* LISCENCE.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		6AF2C4D32263FAA0007AF1E5 /* Tokenizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tokenizer.swift; sourceTree = "<group>"; };
 		6AF2C4D42263FAA0007AF1E5 /* Segment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Segment.swift; sourceTree = "<group>"; };
 		6AF2C4D52263FAA0007AF1E5 /* TokenType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenType.swift; sourceTree = "<group>"; };
+		6AF2C4EE2264591D007AF1E5 /* LISCENCE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LISCENCE.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 		6AF2C4B22263FAA0007AF1E5 /* Splash */ = {
 			isa = PBXGroup;
 			children = (
+				6AF2C4EE2264591D007AF1E5 /* LISCENCE.txt */,
 				6AF2C4B32263FAA0007AF1E5 /* Grammar */,
 				6AF2C4B62263FAA0007AF1E5 /* Output */,
 				6AF2C4BB2263FAA0007AF1E5 /* Extensions */,
@@ -290,6 +293,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AF2C4EF2264591D007AF1E5 /* LISCENCE.txt in Resources */,
 				6A9CD471224843D400560A82 /* Assets.xcassets in Resources */,
 				6A9CD477224843D400560A82 /* Info.plist in Resources */,
 				6A9CD472224843D400560A82 /* Main.storyboard in Resources */,
