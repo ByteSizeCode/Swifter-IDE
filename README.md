@@ -1,6 +1,6 @@
 # Swifter IDE
 
-A simple light-weight Swift IDE for macOS that uses Splash for syntax highlighting.
+A simple light-weight Swift IDE for macOS. Uses Splash for syntax highlighting.
 
 <img src="/ScreenShot/ScreenShot.png" alt="drawing" width="350" height="370"/>
 
